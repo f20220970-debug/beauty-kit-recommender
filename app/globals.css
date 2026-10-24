@@ -1,0 +1,28 @@
+:root { --bg: #f8f4f1; --surface: #fff; --ink: #2a2230; --muted: #6d6474; --line: #e7dfdb; --accent: #7a3e5c; --soft: #f3e7ee; color-scheme: light; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #1c1720; --surface: #262029; --ink: #f1ebf2; --muted: #b3a9b8; --line: #3a3140; --accent: #e3a3c3; --soft: #33283a; color-scheme: dark; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif; line-height: 1.5; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 36px 20px 64px; }
+h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; font-size: 32px; margin: 0 0 6px; }
+.lede { color: var(--muted); margin: 0 0 28px; max-width: 64ch; }
+.note { font-size: 13px; color: var(--muted); }
+form { display: grid; gap: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
+fieldset { border: 0; padding: 0; margin: 0; }
+legend { font-weight: 600; margin-bottom: 8px; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { position: relative; }
+.opt input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.opt span { display: inline-block; padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--bg); font-size: 14px; }
+.opt input:checked + span { background: var(--accent); color: #fff; border-color: var(--accent); }
+.opt input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+button { font: inherit; background: var(--accent); color: #fff; border: 0; border-radius: 10px; padding: 11px 20px; cursor: pointer; justify-self: start; }
+button:disabled { opacity: .6; }
+.result { margin-top: 30px; }
+.brief { background: var(--soft); border-radius: 14px; padding: 18px 20px; margin-bottom: 20px; }
+.brief b { display: block; font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 4px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+.card small { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+.card h3 { margin: 2px 0 2px; font-size: 16px; }
+.card p { margin: 6px 0 0; font-size: 13.5px; color: var(--muted); }
+.err { color: #b3402c; }
